@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+a {
+  color: #5e41a7;
+}
+
 .weather-app {
   background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
   border-radius: 15px; /* Rounded corners */
@@ -22,4 +26,82 @@ body {
   max-width: 600px;
   margin: 100px auto 0;
   padding: 30px;
+}
+
+header {
+  border-bottom: 0.7px solid #b296ca;
+  padding: 0 0 30px;
+}
+
+.search-form-input {
+  background-color: rgba(239, 239, 239, 0.8);
+  border: none;
+  border-radius: 6px;
+  padding: 20px;
+  width: 80%;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.search-form-button {
+  background: #b296ca;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  margin: 7px 0px;
+}
+
+.weather-app-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0px;
+}
+
+.weather-app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+}
+
+.weather-app-details {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(39, 33, 66, 0.4);
+}
+
+.weather-app-details strong {
+  color: #f65282;
+}
+
+.weather-app-temperature-container {
+  display: flex;
+}
+
+.weather-app-temperature {
+  display: flex; /* Ensure inner elements are laid out correctly. I had to also add display: flex to the child elements */
+}
+.weather-app-icon {
+  font-size: 44px;
+  margin-top: 22px;
+}
+
+.weather-app-temperature-value {
+  font-size: 88px;
+  font-weight: 500;
+}
+
+.weather-app-unit {
+  margin-top: 18px;
+  font-size: 30px;
+}
+
+footer {
+  border-top: 0.7px solid #b296ca;
+  padding: 30px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgb(0, 0, 0, 0.6);
 }
