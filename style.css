@@ -53,6 +53,12 @@ header {
   margin: 7px 0px;
 }
 
+.search-form-button:hover {
+  color: #b296ca;
+  background: #ece5eb;
+  cursor: pointer;
+}
+
 .weather-app-data {
   display: flex;
   justify-content: space-between;
