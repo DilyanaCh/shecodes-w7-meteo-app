@@ -12,11 +12,22 @@ function updateWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
 
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
+
   let date = new Date(response.data.time * 1000);
   console.log(date);
 
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatDate(date);
+
+  let iconElement = document.querySelector("#icon");
+  let iconImage = `<img
+                  class="weather-app-icon"
+                  src="${response.data.condition.icon_url}"
+                />`;
+
+  iconElement.innerHTML = iconImage;
 
   // humidity - response.data.temperature.humidity
   // wind = response.data.wind.speed
@@ -51,7 +62,7 @@ function formatDate(date) {
     hours = `0${hours}`;
   }
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes},`;
 }
 
 function searchCity(city) {
@@ -68,4 +79,6 @@ function handleSearch(event) {
 }
 
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearch); // Because the function handleSearch is triggered when the form is being submitted and that is why we save the form to JS variable and add event lister to it
+searchFormElement.addEventListener("submit", handleSearch);
+
+searchCity("Sofia");

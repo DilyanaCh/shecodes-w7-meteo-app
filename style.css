@@ -90,17 +90,20 @@ header {
   display: flex; /* Ensure inner elements are laid out correctly. I had to also add display: flex to the child elements */
 }
 .weather-app-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
+  line-height: 75px;
 }
 
 .weather-app-temperature-value {
   font-size: 88px;
   font-weight: 500;
+  line-height: 75px;
+  margin-top: 0px;
 }
 
 .weather-app-unit {
-  margin-top: 18px;
+  margin-bottom: 88px;
   font-size: 30px;
 }
 
