@@ -29,12 +29,6 @@ function updateWeather(response) {
 
   iconElement.innerHTML = iconImage;
 
-  // humidity - response.data.temperature.humidity
-  // wind = response.data.wind.speed
-
-  //   Humidity: <strong id="humidity">96%</strong>, Wind:
-  // <strong><span id="wind">2.06</span>km/h</strong>
-
   console.log(response.data);
 
   console.log(response.data.condition.description);
@@ -78,7 +72,73 @@ function handleSearch(event) {
   searchCity(searchInput.value); // Call searchCity here
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML += `
+<div class="weather-forecast-day">
+  <div class="weather-forecast-date">${day}</div>
+  <div class="weather-forecast-icon">⛅️</div>
+  <div class="weather-forecast-temperatures">
+    <div class="weather-forecast-temperature">
+      <strong>19°</strong>
+    </div>
+    <div class="weather-forecast-temperature">9°</div>
+  </div>
+</div>
+`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("Sofia");
+displayForecast();
+
+// <div class="weather-forecast-day">
+//   <div class="weather-forecast-date">Wed</div>
+//   <div class="weather-forecast-icon">☀️</div>
+//   <div class="weather-forecast-temperatures">
+//     <div class="weather-forecast-temperature">
+//       <strong>21°</strong>
+//     </div>
+//     <div class="weather-forecast-temperature">11°</div>
+//   </div>
+// </div>
+// <div class="weather-forecast-day">
+//   <div class="weather-forecast-date">Thu</div>
+//   <div class="weather-forecast-icon">🌧️</div>
+//   <div class="weather-forecast-temperatures">
+//     <div class="weather-forecast-temperature">
+//       <strong>17°</strong>
+//     </div>
+//     <div class="weather-forecast-temperature">8°</div>
+//   </div>
+// </div>
+// <div class="weather-forecast-day">
+//   <div class="weather-forecast-date">Fri</div>
+//   <div class="weather-forecast-icon">⛅️</div>
+//   <div class="weather-forecast-temperatures">
+//     <div class="weather-forecast-temperature">
+//       <strong>18°</strong>
+//     </div>
+//     <div class="weather-forecast-temperature">10°</div>
+//   </div>
+// </div>
+// <div class="weather-forecast-day">
+//   <div class="weather-forecast-date">Sat</div>
+//   <div class="weather-forecast-icon">☀️</div>
+//   <div class="weather-forecast-temperatures">
+//     <div class="weather-forecast-temperature">
+//       <strong>22°</strong>
+//     </div>
+//     <div class="weather-forecast-temperature">12°</div>
+//   </div>
+// </div>
