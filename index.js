@@ -108,6 +108,7 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("Sofia");
+displayForecast();
 
 // <div class="weather-forecast-day">
 //   <div class="weather-forecast-date">Wed</div>
