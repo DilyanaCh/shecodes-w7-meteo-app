@@ -61,7 +61,7 @@ function formatDate(date) {
 
 function searchCity(city) {
   let apiKey = "ddff3a3f7b48902404oatcfa308e9e5b";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiURL).then(updateWeather);
 }
 
@@ -72,7 +72,15 @@ function handleSearch(event) {
   searchCity(searchInput.value); // Call searchCity here
 }
 
-function displayForecast() {
+function getForecast() {
+  let apiKey = "ddff3a3f7b48902404oatcfa308e9e5b";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -100,7 +108,6 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("Sofia");
-displayForecast();
 
 // <div class="weather-forecast-day">
 //   <div class="weather-forecast-date">Wed</div>
