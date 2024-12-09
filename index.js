@@ -63,28 +63,29 @@ function searchCity(city) {
   let apiKey = "ddff3a3f7b48902404oatcfa308e9e5b";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiURL).then(updateWeather);
+  getForecast(city);
 }
 
 function handleSearch(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
 
-  searchCity(searchInput.value); // Call searchCity here
+  searchCity(searchInput.value);
 }
 
-function getForecast() {
+function getForecast(city) {
   let apiKey = "ddff3a3f7b48902404oatcfa308e9e5b";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  axios(apiURL).then(displayForecast);
+  axios.get(apiURL).then(displayForecast);
 }
 
 function displayForecast(response) {
   console.log(response.data);
 
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector(".weather-forecast");
+  let forecastHTML = "";
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  let forecastHTML = "";
 
   days.forEach(function (day) {
     forecastHTML += `
@@ -108,7 +109,6 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("Sofia");
-displayForecast();
 
 // <div class="weather-forecast-day">
 //   <div class="weather-forecast-date">Wed</div>
