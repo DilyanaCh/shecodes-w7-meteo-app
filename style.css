@@ -37,10 +37,9 @@ header {
   background-color: rgba(239, 239, 239, 0.8);
   border: none;
   border-radius: 6px;
-  padding: 20px;
+  padding: 15px 20px;
   width: 80%;
   font-size: 16px;
-  padding: 15px 20px;
 }
 
 .search-form-button {
@@ -50,7 +49,7 @@ header {
   border-radius: 6px;
   color: white;
   font-size: 16px;
-  margin: 7px 0px;
+  margin: 7px 0;
 }
 
 .search-form-button:hover {
@@ -62,7 +61,7 @@ header {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0px;
+  margin: 30px 0;
 }
 
 .weather-app-city {
@@ -87,8 +86,9 @@ header {
 }
 
 .weather-app-temperature {
-  display: flex; /* Ensure inner elements are laid out correctly. I had to also add display: flex to the child elements */
+  display: flex; /* Ensure inner elements are laid out correctly */
 }
+
 .weather-app-icon {
   width: 88px;
   height: 88px;
@@ -99,7 +99,7 @@ header {
   font-size: 88px;
   font-weight: 500;
   line-height: 75px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .weather-app-unit {
@@ -109,9 +109,16 @@ header {
 
 .weather-forecast {
   display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  justify-content: space-between; /* Evenly space out the days */
+  align-items: center; /* Vertically center items */
+  margin: 30px 10px 10px 10px;
+}
+
+.weather-forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .weather-forecast-date {
@@ -120,6 +127,10 @@ header {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
+}
+
+.weather-forecast-icon {
+  width: 100%;
 }
 
 .weather-forecast-temperatures {
@@ -134,17 +145,10 @@ header {
   padding: 0 10px;
 }
 
-.weather-forecast-icon {
-  width: 88px;
-  height: 88px;
-  display: block;
-  margin: 0 auto;
-}
-
 footer {
   border-top: 0.7px solid #b296ca;
   padding: 30px 0 0;
   text-align: center;
   font-size: 14px;
-  color: rgb(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
